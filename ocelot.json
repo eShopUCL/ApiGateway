@@ -1,19 +1,10 @@
 {
-  "Routes": [
-    {
-      "DownstreamPathTemplate": "/api/service1/{everything}",
-      "DownstreamScheme": "http",
-      "DownstreamHostAndPorts": [
-        {
-          "Host": "localhost",
-          "Port": 5001
-        }
-      ],
-      "UpstreamPathTemplate": "/service1/{everything}",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put", "Delete" ]
-    }
-  ],
+  "Routes": [],
   "GlobalConfiguration": {
     "BaseUrl": "http://localhost:5000"
-  }
+  },
+  "IncludeConfiguration": [
+    "RouteConfigs/catalog-routes.json",
+    "RouteConfigs/authentication-routes.json"
+  ]
 }

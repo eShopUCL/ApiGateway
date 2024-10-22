@@ -1,0 +1,17 @@
+{
+  "Routes": [
+    {
+      "Key": "Authentication_Route",
+      "DownstreamPathTemplate": "/api/authenticate",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/authentication/authenticate",
+      "UpstreamHttpMethod": [ "Post" ]
+    }
+  ]
+}
