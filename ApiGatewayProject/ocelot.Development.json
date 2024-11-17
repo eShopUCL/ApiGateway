@@ -1,0 +1,59 @@
+{
+  "Routes": [
+    {
+      "Key": "Catalog_Route_Brands",
+      "DownstreamPathTemplate": "/api/catalog-brands",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/catalog/catalog-brands",
+      "UpstreamHttpMethod": [ "Get" ]
+    },
+    {
+      "Key": "Catalog_Route_Items_By_Id",
+      "DownstreamPathTemplate": "/api/catalog-items/{catalogItemId}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/catalog/catalog-items/{id}",
+      "UpstreamHttpMethod": [ "Get", "Delete" ]
+    },
+    {
+      "Key": "Catalog_Route_Items",
+      "DownstreamPathTemplate": "/api/catalog-items",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/catalog/catalog-items",
+      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+    },
+    {
+      "Key": "Catalog_Route_Types",
+      "DownstreamPathTemplate": "/api/catalog-types",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "localhost",
+          "Port": 5001
+        }
+      ],
+      "UpstreamPathTemplate": "/gateway/catalog/catalog-types",
+      "UpstreamHttpMethod": [ "Get" ]
+    }
+  ],
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5000/apigateway"
+  }
+}
