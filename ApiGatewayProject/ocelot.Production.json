@@ -11,7 +11,20 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/items",
-      "UpstreamHttpMethod": [ "Get", "Post", "Put" ]
+      "UpstreamHttpMethod": ["Get", "Post"]
+    },
+    {
+      "Key": "Catalog_Route_Items",
+      "DownstreamPathTemplate": "/catalogservice/api/catalog/items/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "4.207.200.245",
+          "Port": 80
+        }
+      ],
+      "UpstreamPathTemplate": "/api/catalog/items/{id}",
+      "UpstreamHttpMethod": ["Put"]
     },
     {
       "Key": "Catalog_Route_Items_By",
@@ -24,7 +37,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/items/by",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": ["Get"]
     },
     {
       "Key": "Catalog_Route_Items_By_Id",
@@ -37,7 +50,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/items/{id}",
-      "UpstreamHttpMethod": [ "Get", "Delete" ]
+      "UpstreamHttpMethod": ["Get", "Delete"]
     },
     {
       "Key": "Catalog_Route_Items_By_Name",
@@ -50,7 +63,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/items/by/{name}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": ["Get"]
     },
     {
       "Key": "Catalog_Route_Items_Type_Brand",
@@ -63,7 +76,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/items/type/{typeId}/brand/{brandId}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": ["Get"]
     },
     {
       "Key": "Catalog_Route_Items_Type_All_By_Brand",
@@ -76,7 +89,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/items/type/all/brand/{brandId}",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": ["Get"]
     },
     {
       "Key": "Catalog_Route_Types",
@@ -89,7 +102,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/catalogtypes",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": ["Get"]
     },
     {
       "Key": "Catalog_Route_Brands",
@@ -102,7 +115,7 @@
         }
       ],
       "UpstreamPathTemplate": "/api/catalog/catalogbrands",
-      "UpstreamHttpMethod": [ "Get" ]
+      "UpstreamHttpMethod": ["Get"]
     }
   ],
   "GlobalConfiguration": {
