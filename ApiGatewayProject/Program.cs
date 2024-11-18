@@ -36,6 +36,8 @@ if (environment.Equals("Production", StringComparison.OrdinalIgnoreCase))
     app.UsePathBase("/apigateway");
 }
 
+
+
 app.UseSwagger();
 
 // Sætter swagger UI op, så vi kan se om servicen faktisk er
@@ -48,6 +50,17 @@ app.UseSwaggerUI(c =>
 
     c.SwaggerEndpoint(swaggerEndpoint, "Catalog Service API V1");
     c.RoutePrefix = "swagger"; // Accessible at /swagger or /apigateway/swagger
+});
+
+app.Use(async (context, next) =>
+{
+    context.Request.EnableBuffering(); // Allow the body to be read multiple times
+    using var reader = new StreamReader(context.Request.Body, leaveOpen: true);
+    var body = await reader.ReadToEndAsync();
+    context.Request.Body.Position = 0; // Reset stream position
+
+    Console.WriteLine($"Incoming Request Body: {body}");
+    await next();
 });
 
 // app.UseHttpsRedirection(); // Udkommenteret httpsredirection da vi ikke bruger HTTPS
