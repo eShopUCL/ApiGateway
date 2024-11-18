@@ -119,6 +119,19 @@
     }
   ],
   "GlobalConfiguration": {
-    "BaseUrl": "http://4.207.200.245/apigateway"
+    "BaseUrl": "http://4.207.200.245/apigateway",
+    "RateLimitOptions": {
+      "EnableRateLimiting": true,
+      "PeriodTimespan": 1,
+      "Limit": 5,
+      "DisableRateLimitHeaders": false,
+      "QuotaExceededMessage": "Too many requests. Try again later.",
+      "HttpStatusCode": 429,
+      "LoadBalancerOptions" : "NoLoadBalancer"
+      // "LoadBalancerOptions" : Options - "Roundrobin", "LeastConnection", "NoLoadBalancer"
+      // "Roundrobin" - Distribuere ligeligt fordelt imellem downstream Services i en fastsat orden
+      // "LeastConnection" - Prioritere services med færrest igangværende connections
+      // "NoLoadBalancer" - Sender alt trafik til den første downstreamservice i listen
+    }
   }
 }
